@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Report Labwork 1}
+\author{Pham Thi Ngoc Mai}
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Implement the conversion}
+I add these line before Labwork:labwork1\_OpenMP() \\
+\#pragma omp parallel \\
+\#pragma omp parallel static \\
+\#pragma omp parallel dynamic
+
+
+\section{Speed up Result}
+\subsection{With \#pragma omp parallel}
+labwork 1 CPU ellapsed 5649.9ms \\
+labwork 1 ellapsed 81.0ms
+\subsection{With \#pragma omp parallel static}
+labwork 1 CPU ellapsed 5729.4ms \\
+labwork 1 ellapsed 132.2ms
+\subsection{With \#pragma omp parallel static}
+labwork 1 CPU ellapsed 5627.4ms \\
+labwork 1 ellapsed 81.2ms
+\end{document}
+
