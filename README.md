@@ -12,10 +12,11 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: MyName
-* Key:
+* Name: Pham Thi Ngoc Mai
+* Key: 
 
 ```
-ssh-rsa ThisIsasAMpleKey
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9bUFi3xU7YjzdGFTcTU11RnH8etOB7LXYhTdHALTJCWJ6fQDyHtV1htGNaYcFECSIy5G3VKO39G/Wi2wi1Ok7YWspjbdrrcveLFolxF431K95vEMFxTYHhL1yV+mNakBNODBgONtPH312It4qShhJBnAOgdVzCMrWSTvjgG9n4vJkbgNf7sTu52tm7UTqU9nsFfXFgN8L5bpnQ4G3D0CF+gGYkCcYAGNolonTPbtvDA6rDDH9A7X4zhujF6jsWM9Do9DvpL/J8YWzMHx4UsCb11bBQMrB460nzaRHMQ3GfjH+QiJl4qprqPLVFEzGRXrIfOVL/IYtPyPYZlfBPUy7 mailovemisa@misa-pc
+
 ```
 
