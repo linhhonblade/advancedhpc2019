@@ -13,21 +13,34 @@
 \maketitle
 
 \section{Implement the conversion}
-I add these line before Labwork:labwork1\_OpenMP() \\
-\#pragma omp parallel \\
-\#pragma omp parallel static \\
-\#pragma omp parallel dynamic
+I add these line before Labwork:labwork1\_OpenMP()
+\begin{verbatim}
+    #pragma omp parallel
+    #pragma omp parallel static
+    #pragma omp parallel dynamic
+    
+\end{verbatim}
 
 
 \section{Speed up Result}
-\subsection{With \#pragma omp parallel}
-labwork 1 CPU ellapsed 5649.9ms \\
-labwork 1 ellapsed 81.0ms
-\subsection{With \#pragma omp parallel static}
-labwork 1 CPU ellapsed 5729.4ms \\
-labwork 1 ellapsed 132.2ms
-\subsection{With \#pragma omp parallel static}
-labwork 1 CPU ellapsed 5627.4ms \\
-labwork 1 ellapsed 81.2ms
+\subsection{With \#pragma omp parallel for schedule(static}
+\begin{verbatim}
+    labwork 1 CPU ellapsed 5653.5ms
+    labwork 1 OMP ellapsed 510.4ms
+\end{verbatim}
+
+\subsection{With omp\_set\_num\_threads(4) and \#pragma omp parallel for schedule(static)}
+\begin{verbatim}
+    labwork 1 CPU ellapsed 5671.8ms
+    labwork 1 OMP ellapsed 1733.7ms
+
+    
+\end{verbatim}
+\subsection{With omp\_set\_num\_threads(20) and \#pragma omp parallel for schedule(static)}
+\begin{verbatim}
+    labwork 1 CPU ellapsed 5615.3ms
+    labwork 1 OMP ellapsed 647.6ms
+\end{verbatim}
 \end{document}
+
 
