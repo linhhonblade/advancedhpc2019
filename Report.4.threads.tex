@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Report Labwork 3}
+\author{Pham Thi Ngoc Mai}
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Labwork Result}
+Speedup output with Grid Size 8 by 8
+\begin{center}
+    \begin{tabular}{c|c}
+        Block Size & Speedup (ms)  \\
+        \hline
+        (32, 32) & 177.9 \\
+        (1, 1024) & 152.1 \\
+        (1024, 1) & 174.6 \\
+        (16, 64) & 302.6
+    \end{tabular}
+\end{center}
+
+\section{Excercises}
+\subsection{Excercise 1}
+The best configuration for thread blocks is $16x16$ because $16x16<512$ and we can reach the maximum threads per SM by only using $4<8$ blocks.
+
+\subsection{Excercise 2}
+256 threads per blocks will result in the most number of threads in SM
+
+\subsection{Excercise 3}
+Need 4 blocksm => 2048 threads
+
+\end{document}
+
+
