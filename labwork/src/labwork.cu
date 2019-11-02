@@ -200,10 +200,13 @@ void Labwork::labwork3_GPU() {
     cudaFree(devGray);
 }
 
-__global__ void rgb2grayCUDA4(uchar3 *devInput, uchar3 *devGray, int imgWidth){
+__global__ void rgb2grayCUDA4(uchar3 *devInput, uchar3 *devGray, int imgWidth, int imgHeight){
     int col = blockIdx.x*blockDim.x + threadIdx.x;
     int row = blockIdx.y*blockDim.y + threadIdx.y;
     int tid = row*imgWidth + col;
+    // Check if within image bounds
+    if ((col >= imgWidth) || (row >= imgHeight))
+        return;
     devGray[tid].x = (devInput[tid].x + devInput[tid].y + devInput[tid].z)/3;
     devGray[tid].z = devGray[tid].y = devGray[tid].x;
    
@@ -228,7 +231,7 @@ void Labwork::labwork4_GPU() {
     // Copy CUDA Memory from CPU to GPU
     cudaMemcpy(devInput, inputImage->buffer, pixelCount * sizeof(uchar3), cudaMemcpyHostToDevice);
     // Processing
-    rgb2grayCUDA4<<<gridSize, blockSize>>>(devInput, devGray, inputImage->width);
+    rgb2grayCUDA4<<<gridSize, blockSize>>>(devInput, devGray, inputImage->width, inputImage->height);
     // Copy CUDA Memory from GPU to CPU
     cudaMemcpy(outputImage, devGray, pixelCount * sizeof(uchar3), cudaMemcpyDeviceToHost);
     // return to output
